@@ -4,5 +4,5 @@
 from frappe.model.document import Document
 
 
-class EtpDailyLog(Document):
+class ETPDailyLog(Document):
 	pass

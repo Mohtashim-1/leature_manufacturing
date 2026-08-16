@@ -4,5 +4,5 @@
 from frappe.model.document import Document
 
 
-class LeatherQcTest(Document):
+class LeatherQCTest(Document):
 	pass

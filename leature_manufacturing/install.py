@@ -21,6 +21,9 @@ def after_migrate():
 	ensure_roles()
 	seed_masters()
 	import_missing_doctypes()
+	from leature_manufacturing.demo_data import seed_demo
+
+	seed_demo()
 
 
 def import_missing_doctypes():
