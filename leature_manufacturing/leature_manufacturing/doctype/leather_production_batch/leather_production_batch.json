@@ -1,0 +1,381 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-16 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "process_stage",
+  "posting_date",
+  "col_1",
+  "company",
+  "status",
+  "recipe",
+  "route",
+  "tanning_method",
+  "res_sec",
+  "drum",
+  "machine",
+  "operator",
+  "col_2",
+  "shift",
+  "start_time",
+  "end_time",
+  "in_sec",
+  "input_lot",
+  "input_pieces",
+  "input_weight_kg",
+  "input_area_sqft",
+  "col_3",
+  "water_qty",
+  "temperature",
+  "ph",
+  "runtime_min",
+  "chem_sec",
+  "chemicals",
+  "out_sec",
+  "output_lot",
+  "output_pieces",
+  "output_weight_kg",
+  "output_area_sqft",
+  "rejected_qty",
+  "col_4",
+  "production_loss",
+  "weight_yield_percent",
+  "area_yield",
+  "output_form",
+  "target_thickness_mm",
+  "actual_thickness_mm",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "BAT-.YYYY.-.#####",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "process_stage",
+   "fieldtype": "Select",
+   "label": "Process",
+   "options": "Soaking\nLiming\nFleshing\nUnhairing\nDeliming\nBating\nPickling\nChrome Tanning\nVegetable Tanning\nChrome-free Tanning\nAldehyde Tanning\nSynthetic Tanning\nCombination Tanning\nSplitting\nShaving\nNeutralization\nRetanning\nDyeing\nFatliquoring\nSetting\nSammying\nVacuum Drying\nHang Drying\nToggle Drying\nStaking\nMilling\nBuffing\nSpray Finishing\nRoller Coating\nIroning\nPlating\nEmbossing\nPolishing\nMeasuring",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "col_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIn Progress\nCompleted\nOn Hold\nCancelled",
+   "default": "Draft",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "recipe",
+   "fieldtype": "Link",
+   "label": "Recipe",
+   "options": "Leather Recipe"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Link",
+   "label": "Process Route",
+   "options": "Leather Process Route"
+  },
+  {
+   "fieldname": "tanning_method",
+   "fieldtype": "Select",
+   "label": "Tanning Method",
+   "options": "Chrome Tanning\nVegetable Tanning\nChrome-free\nAldehyde\nSynthetic\nCombination"
+  },
+  {
+   "fieldname": "res_sec",
+   "fieldtype": "Section Break",
+   "label": "Resources"
+  },
+  {
+   "fieldname": "drum",
+   "fieldtype": "Link",
+   "label": "Drum",
+   "options": "Drum"
+  },
+  {
+   "fieldname": "machine",
+   "fieldtype": "Link",
+   "label": "Machine",
+   "options": "Leather Machine"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "User"
+  },
+  {
+   "fieldname": "col_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "options": "A\nB\nC\nGeneral"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "label": "Start"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End"
+  },
+  {
+   "fieldname": "in_sec",
+   "fieldtype": "Section Break",
+   "label": "Input"
+  },
+  {
+   "fieldname": "input_lot",
+   "fieldtype": "Link",
+   "label": "Input Lot",
+   "options": "Leather Lot",
+   "reqd": 1
+  },
+  {
+   "fieldname": "input_pieces",
+   "fieldtype": "Int",
+   "label": "Input Pieces"
+  },
+  {
+   "fieldname": "input_weight_kg",
+   "fieldtype": "Float",
+   "label": "Input Weight (kg)"
+  },
+  {
+   "fieldname": "input_area_sqft",
+   "fieldtype": "Float",
+   "label": "Input Area (sq. ft.)"
+  },
+  {
+   "fieldname": "col_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "water_qty",
+   "fieldtype": "Float",
+   "label": "Water Qty"
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature"
+  },
+  {
+   "fieldname": "ph",
+   "fieldtype": "Float",
+   "label": "pH"
+  },
+  {
+   "fieldname": "runtime_min",
+   "fieldtype": "Float",
+   "label": "Runtime (min)"
+  },
+  {
+   "fieldname": "chem_sec",
+   "fieldtype": "Section Break",
+   "label": "Chemicals"
+  },
+  {
+   "fieldname": "chemicals",
+   "fieldtype": "Table",
+   "label": "Chemicals",
+   "options": "Leather Batch Chemical"
+  },
+  {
+   "fieldname": "out_sec",
+   "fieldtype": "Section Break",
+   "label": "Output"
+  },
+  {
+   "fieldname": "output_lot",
+   "fieldtype": "Link",
+   "label": "Output Lot",
+   "options": "Leather Lot"
+  },
+  {
+   "fieldname": "output_pieces",
+   "fieldtype": "Int",
+   "label": "Output Pieces"
+  },
+  {
+   "fieldname": "output_weight_kg",
+   "fieldtype": "Float",
+   "label": "Output Weight (kg)"
+  },
+  {
+   "fieldname": "output_area_sqft",
+   "fieldtype": "Float",
+   "label": "Output Area (sq. ft.)"
+  },
+  {
+   "fieldname": "rejected_qty",
+   "fieldtype": "Float",
+   "label": "Rejected Qty"
+  },
+  {
+   "fieldname": "col_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "production_loss",
+   "fieldtype": "Float",
+   "label": "Production Loss",
+   "read_only": 1
+  },
+  {
+   "fieldname": "weight_yield_percent",
+   "fieldtype": "Percent",
+   "label": "Weight Yield %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "area_yield",
+   "fieldtype": "Float",
+   "label": "Area Yield (sqft/kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "output_form",
+   "fieldtype": "Select",
+   "label": "Output Form",
+   "options": "Full Hide\nSide\nSplit\nShoulder\nBelly\nGrain Split\nFlesh Split"
+  },
+  {
+   "fieldname": "target_thickness_mm",
+   "fieldtype": "Float",
+   "label": "Target Thickness (mm)"
+  },
+  {
+   "fieldname": "actual_thickness_mm",
+   "fieldtype": "Float",
+   "label": "Actual Thickness (mm)"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Leather Production Batch"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "issingle": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-16 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Leature Manufacturing",
+ "name": "Leather Production Batch",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "email": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Leather Manager",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "email": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1
+  },
+  {
+   "role": "Tannery Operator",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "submit": 1
+  },
+  {
+   "role": "Leather QC",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "submit": 1
+  },
+  {
+   "role": "Leather Sales",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "submit": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field",
+ "search_fields": "process_stage,drum,input_lot,status"
+}

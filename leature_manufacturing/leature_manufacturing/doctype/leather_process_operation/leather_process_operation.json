@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-08-16 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "operation",
+  "sequence",
+  "standard_time_min",
+  "recipe",
+  "workstation",
+  "expected_yield_percent"
+ ],
+ "fields": [
+  {
+   "fieldname": "operation",
+   "fieldtype": "Select",
+   "label": "Operation",
+   "options": "Soaking\nLiming\nFleshing\nUnhairing\nDeliming\nBating\nPickling\nChrome Tanning\nVegetable Tanning\nChrome-free Tanning\nAldehyde Tanning\nSynthetic Tanning\nCombination Tanning\nSplitting\nShaving\nNeutralization\nRetanning\nDyeing\nFatliquoring\nSetting\nSammying\nVacuum Drying\nHang Drying\nToggle Drying\nStaking\nMilling\nBuffing\nSpray Finishing\nRoller Coating\nIroning\nPlating\nEmbossing\nPolishing\nMeasuring",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sequence",
+   "fieldtype": "Int",
+   "label": "Sequence",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "standard_time_min",
+   "fieldtype": "Float",
+   "label": "Std Time (min)",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "recipe",
+   "fieldtype": "Link",
+   "label": "Recipe",
+   "options": "Leather Recipe"
+  },
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Data",
+   "label": "Drum / Machine"
+  },
+  {
+   "fieldname": "expected_yield_percent",
+   "fieldtype": "Percent",
+   "label": "Expected Yield %"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "issingle": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-16 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Leature Manufacturing",
+ "name": "Leather Process Operation",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "editable_grid": 1
+}

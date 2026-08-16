@@ -1,0 +1,244 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-16 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hide_code",
+  "hide_name",
+  "item",
+  "col_1",
+  "animal_type",
+  "preservation_method",
+  "origin_country",
+  "breed",
+  "sex",
+  "spec_sec",
+  "weight_from_kg",
+  "weight_to_kg",
+  "col_2",
+  "size_from",
+  "size_to",
+  "thickness_from_mm",
+  "thickness_to_mm",
+  "comm_sec",
+  "purchase_uom",
+  "expected_yield_percent",
+  "defect_tolerance_percent",
+  "storage_requirement",
+  "default_grade",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "hide_code",
+   "fieldtype": "Data",
+   "label": "Hide Code",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "hide_name",
+   "fieldtype": "Data",
+   "label": "Hide Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Stock Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "col_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "animal_type",
+   "fieldtype": "Link",
+   "label": "Animal Type",
+   "options": "Animal Type",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "preservation_method",
+   "fieldtype": "Select",
+   "label": "Preservation",
+   "options": "Fresh\nSalted\nDried\nBrined",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "origin_country",
+   "fieldtype": "Link",
+   "label": "Country of Origin",
+   "options": "Country"
+  },
+  {
+   "fieldname": "breed",
+   "fieldtype": "Data",
+   "label": "Breed"
+  },
+  {
+   "fieldname": "sex",
+   "fieldtype": "Select",
+   "label": "Sex",
+   "options": "Male\nFemale\nMixed"
+  },
+  {
+   "fieldname": "spec_sec",
+   "fieldtype": "Section Break",
+   "label": "Size & Quality"
+  },
+  {
+   "fieldname": "weight_from_kg",
+   "fieldtype": "Float",
+   "label": "Weight From (kg)"
+  },
+  {
+   "fieldname": "weight_to_kg",
+   "fieldtype": "Float",
+   "label": "Weight To (kg)"
+  },
+  {
+   "fieldname": "col_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "size_from",
+   "fieldtype": "Float",
+   "label": "Size From"
+  },
+  {
+   "fieldname": "size_to",
+   "fieldtype": "Float",
+   "label": "Size To"
+  },
+  {
+   "fieldname": "thickness_from_mm",
+   "fieldtype": "Float",
+   "label": "Thickness From (mm)"
+  },
+  {
+   "fieldname": "thickness_to_mm",
+   "fieldtype": "Float",
+   "label": "Thickness To (mm)"
+  },
+  {
+   "fieldname": "comm_sec",
+   "fieldtype": "Section Break",
+   "label": "Commercial"
+  },
+  {
+   "fieldname": "purchase_uom",
+   "fieldtype": "Select",
+   "label": "Purchase Unit",
+   "options": "Piece\nKg\nSq. ft.\nSq. meter",
+   "default": "Piece"
+  },
+  {
+   "fieldname": "expected_yield_percent",
+   "fieldtype": "Percent",
+   "label": "Expected Yield %"
+  },
+  {
+   "fieldname": "defect_tolerance_percent",
+   "fieldtype": "Percent",
+   "label": "Defect Tolerance %"
+  },
+  {
+   "fieldname": "storage_requirement",
+   "fieldtype": "Select",
+   "label": "Storage",
+   "options": "Salted Hide\nFresh Hide\nCold Storage\nChemical\nWet Blue\nCrust\nFinished Leather\nReject\nScrap"
+  },
+  {
+   "fieldname": "default_grade",
+   "fieldtype": "Link",
+   "label": "Default Grade",
+   "options": "Leather Grade"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "issingle": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-16 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Leature Manufacturing",
+ "name": "Raw Hide Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "email": 1
+  },
+  {
+   "role": "Leather Manager",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "email": 1
+  },
+  {
+   "role": "Tannery Operator",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1
+  },
+  {
+   "role": "Leather QC",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1
+  },
+  {
+   "role": "Leather Sales",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:hide_code",
+ "naming_rule": "By fieldname",
+ "title_field": "hide_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "hide_name,animal_type,preservation_method"
+}

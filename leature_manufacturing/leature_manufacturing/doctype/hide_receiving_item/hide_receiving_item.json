@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-08-16 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "raw_hide",
+  "pieces",
+  "gross_weight_kg",
+  "salt_deduction_kg",
+  "moisture_deduction_kg",
+  "net_weight_kg",
+  "damaged_hides",
+  "rejected_hides",
+  "grade",
+  "size",
+  "thickness_mm"
+ ],
+ "fields": [
+  {
+   "fieldname": "raw_hide",
+   "fieldtype": "Link",
+   "label": "Raw Hide",
+   "options": "Raw Hide Master",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "pieces",
+   "fieldtype": "Int",
+   "label": "Pieces",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "gross_weight_kg",
+   "fieldtype": "Float",
+   "label": "Gross Weight",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "salt_deduction_kg",
+   "fieldtype": "Float",
+   "label": "Salt Deduction"
+  },
+  {
+   "fieldname": "moisture_deduction_kg",
+   "fieldtype": "Float",
+   "label": "Moisture Deduction"
+  },
+  {
+   "fieldname": "net_weight_kg",
+   "fieldtype": "Float",
+   "label": "Net Weight",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "damaged_hides",
+   "fieldtype": "Int",
+   "label": "Damaged"
+  },
+  {
+   "fieldname": "rejected_hides",
+   "fieldtype": "Int",
+   "label": "Rejected"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Link",
+   "label": "Grade",
+   "options": "Leather Grade",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "size",
+   "fieldtype": "Data",
+   "label": "Size"
+  },
+  {
+   "fieldname": "thickness_mm",
+   "fieldtype": "Float",
+   "label": "Thickness"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "issingle": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-16 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Leature Manufacturing",
+ "name": "Hide Receiving Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "editable_grid": 1
+}

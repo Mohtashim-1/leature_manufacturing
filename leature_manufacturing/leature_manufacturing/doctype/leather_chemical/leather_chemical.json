@@ -1,0 +1,178 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-16 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "chemical_code",
+  "chemical_name",
+  "item",
+  "col_1",
+  "chemical_type",
+  "concentration_percent",
+  "hazard_class",
+  "uom",
+  "store_sec",
+  "storage_instructions",
+  "msds",
+  "shelf_life_days",
+  "restricted_substance",
+  "zdhc_compliant"
+ ],
+ "fields": [
+  {
+   "fieldname": "chemical_code",
+   "fieldtype": "Data",
+   "label": "Chemical Code",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "chemical_name",
+   "fieldtype": "Data",
+   "label": "Chemical Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Stock Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "col_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chemical_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Acid\nAlkali\nTanning Agent\nDye\nPigment\nFatliquor\nEnzyme\nRetanning Chemical\nFinishing Chemical\nLacquer\nResin\nSalt\nOther",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "concentration_percent",
+   "fieldtype": "Percent",
+   "label": "Concentration %"
+  },
+  {
+   "fieldname": "hazard_class",
+   "fieldtype": "Data",
+   "label": "Hazard Class"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "store_sec",
+   "fieldtype": "Section Break",
+   "label": "Storage & Compliance"
+  },
+  {
+   "fieldname": "storage_instructions",
+   "fieldtype": "Small Text",
+   "label": "Storage Instructions"
+  },
+  {
+   "fieldname": "msds",
+   "fieldtype": "Attach",
+   "label": "MSDS"
+  },
+  {
+   "fieldname": "shelf_life_days",
+   "fieldtype": "Int",
+   "label": "Shelf Life (days)"
+  },
+  {
+   "fieldname": "restricted_substance",
+   "fieldtype": "Check",
+   "label": "Restricted Substance (RSL/MRSL)"
+  },
+  {
+   "fieldname": "zdhc_compliant",
+   "fieldtype": "Check",
+   "label": "ZDHC Compliant"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "issingle": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-16 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Leature Manufacturing",
+ "name": "Leather Chemical",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "email": 1
+  },
+  {
+   "role": "Leather Manager",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "share": 1,
+   "email": 1
+  },
+  {
+   "role": "Tannery Operator",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1
+  },
+  {
+   "role": "Leather QC",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1
+  },
+  {
+   "role": "Leather Sales",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:chemical_code",
+ "naming_rule": "By fieldname",
+ "title_field": "chemical_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "chemical_name,chemical_type"
+}

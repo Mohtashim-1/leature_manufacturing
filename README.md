@@ -1,41 +1,31 @@
 ### Leature Manufacturing
 
-leature manufacturing
+Leather / tannery ERP on ERPNext. First-class concepts are **Lot, Piece, Area, Weight, Grade, Recipe, Yield, and Traceability** — not a generic manufacturing BOM.
+
+Flow:
+
+Raw Hide → Receiving & Grading → Beamhouse → Tanning / Wet Blue → Splitting & Shaving → Dyeing → Finishing → Piece selection → Sales / Export
 
 ### Installation
-
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
 ```bash
 cd $PATH_TO_YOUR_BENCH
 bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app leature_manufacturing
+bench --site your.site install-app erpnext
+bench --site your.site install-app leature_manufacturing
 ```
 
-### Contributing
+Open Desk workspace **Leature**, or https://your.site/app/leature
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+### What is included
 
-```bash
-cd apps/leature_manufacturing
-pre-commit install
-```
+- Hide / skin masters, article, color, grade, chemical, drum, machine
+- Lot-based purchasing, receiving inspection, defect grading, grade-wise valuation
+- Production batches for beamhouse, tanning, dyeing, finishing (recipe % of hide weight)
+- Area measurement (sq. ft. / sq. m), piece barcodes, QC and lab samples
+- Sales allocation against matching pieces, packing, export shipment, complaints
+- Batch costing (cost per sq. ft.), ETP log, waste, sustainability
+- Yield, chemical consumption, grade mix, stock, costing, and lot traceability reports
+- Factory dashboard
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### CI
-
-This app can use GitHub Actions for CI. The following workflows are configured:
-
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
-
-### License
-
-mit
+ERPNext covers GL, AP/AR, stock items (optional link), HR, and tax. This app is the tannery layer on top.

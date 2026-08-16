@@ -1,25 +1,22 @@
 app_name = "leature_manufacturing"
 app_title = "Leature Manufacturing"
 app_publisher = "mohtashim"
-app_description = "leature manufacturing"
+app_description = "Leather tannery ERP — hide to finished leather"
 app_email = "shoaibmohtashim973@gmail.com"
 app_license = "mit"
 
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ["erpnext"]
 
-# Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "leature_manufacturing",
-# 		"logo": "/assets/leature_manufacturing/logo.png",
-# 		"title": "Leature Manufacturing",
-# 		"route": "/leature_manufacturing",
-# 		"has_permission": "leature_manufacturing.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "leature_manufacturing",
+		"title": "Leature Manufacturing",
+		"route": "/app/leature",
+	}
+]
 
 # Includes in <head>
 # ------------------
@@ -82,8 +79,8 @@ app_license = "mit"
 # Installation
 # ------------
 
-# before_install = "leature_manufacturing.install.before_install"
-# after_install = "leature_manufacturing.install.after_install"
+after_install = "leature_manufacturing.install.after_install"
+after_migrate = "leature_manufacturing.install.after_migrate"
 
 # Uninstallation
 # ------------

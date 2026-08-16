@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-08-16 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "drum",
+  "batch",
+  "process_name",
+  "planned_start",
+  "planned_end",
+  "capacity_kg"
+ ],
+ "fields": [
+  {
+   "fieldname": "drum",
+   "fieldtype": "Link",
+   "label": "Drum",
+   "options": "Drum",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "batch",
+   "fieldtype": "Link",
+   "label": "Batch",
+   "options": "Leather Production Batch",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "process_name",
+   "fieldtype": "Select",
+   "label": "Process",
+   "options": "Soaking\nLiming\nFleshing\nUnhairing\nDeliming\nBating\nPickling\nChrome Tanning\nVegetable Tanning\nChrome-free Tanning\nAldehyde Tanning\nSynthetic Tanning\nCombination Tanning\nSplitting\nShaving\nNeutralization\nRetanning\nDyeing\nFatliquoring\nSetting\nSammying\nVacuum Drying\nHang Drying\nToggle Drying\nStaking\nMilling\nBuffing\nSpray Finishing\nRoller Coating\nIroning\nPlating\nEmbossing\nPolishing\nMeasuring",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "planned_start",
+   "fieldtype": "Datetime",
+   "label": "Start",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "planned_end",
+   "fieldtype": "Datetime",
+   "label": "End",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "capacity_kg",
+   "fieldtype": "Float",
+   "label": "Capacity"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "issingle": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-16 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Leature Manufacturing",
+ "name": "Drum Schedule Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "editable_grid": 1
+}
