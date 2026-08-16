@@ -48,6 +48,9 @@
   "target_thickness_mm",
   "actual_thickness_mm",
   "remarks",
+  "erp_sec",
+  "work_order",
+  "job_card",
   "amended_from"
  ],
  "fields": [
@@ -291,6 +294,25 @@
    "label": "Remarks"
   },
   {
+   "fieldname": "erp_sec",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Manufacturing"
+  },
+  {
+   "fieldname": "work_order",
+   "fieldtype": "Link",
+   "label": "Work Order",
+   "options": "Work Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_card",
+   "fieldtype": "Link",
+   "label": "Job Card",
+   "options": "Job Card",
+   "read_only": 1
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -303,7 +325,7 @@
  "issingle": 0,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-16 22:00:00.000000",
+ "modified": "2026-08-16 23:50:00.000000",
  "modified_by": "Administrator",
  "module": "Leature Manufacturing",
  "name": "Leather Production Batch",

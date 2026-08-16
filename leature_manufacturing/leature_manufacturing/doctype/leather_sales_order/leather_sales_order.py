@@ -13,3 +13,11 @@ class LeatherSalesOrder(Document):
 			amount += row.amount or 0
 		self.total_qty = qty
 		self.grand_total = amount
+
+	def on_submit(self):
+		from leature_manufacturing.leature_manufacturing.erpnext_bridge import create_sales_order
+
+		try:
+			create_sales_order(self)
+		except Exception:
+			pass

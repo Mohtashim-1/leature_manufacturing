@@ -18,3 +18,11 @@ class HidePurchaseOrder(Document):
 			+ (self.preservation_cost or 0)
 			+ (self.commission_amount or 0)
 		)
+
+	def on_submit(self):
+		from leature_manufacturing.leature_manufacturing.erpnext_bridge import create_purchase_order
+
+		try:
+			create_purchase_order(self)
+		except Exception:
+			pass

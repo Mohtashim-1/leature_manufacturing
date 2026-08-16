@@ -11,6 +11,7 @@
   "capacity_kg",
   "process_type",
   "status",
+  "workstation",
   "location",
   "last_maintenance_on"
  ],
@@ -55,6 +56,13 @@
    "default": "Available"
   },
   {
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "label": "ERPNext Workstation",
+   "options": "Workstation",
+   "read_only": 1
+  },
+  {
    "fieldname": "location",
    "fieldtype": "Data",
    "label": "Location"
@@ -71,7 +79,7 @@
  "issingle": 0,
  "is_submittable": 0,
  "links": [],
- "modified": "2026-08-16 22:00:00.000000",
+ "modified": "2026-08-16 23:50:00.000000",
  "modified_by": "Administrator",
  "module": "Leature Manufacturing",
  "name": "Drum",

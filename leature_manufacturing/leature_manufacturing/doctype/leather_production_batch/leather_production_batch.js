@@ -8,6 +8,20 @@ frappe.ui.form.on("Leather Production Batch", {
 				frm.trigger("recipe");
 			});
 		}
+		if (frm.doc.work_order) {
+			frm.add_custom_button(
+				__("Open Work Order"),
+				() => frappe.set_route("Form", "Work Order", frm.doc.work_order),
+				__("ERPNext")
+			);
+		}
+		if (frm.doc.job_card) {
+			frm.add_custom_button(
+				__("Open Job Card"),
+				() => frappe.set_route("Form", "Job Card", frm.doc.job_card),
+				__("ERPNext")
+			);
+		}
 	},
 	recipe(frm) {
 		if (!frm.doc.recipe || !frm.doc.input_weight_kg) {

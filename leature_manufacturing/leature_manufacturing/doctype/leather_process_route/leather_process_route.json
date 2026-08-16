@@ -11,6 +11,7 @@
   "col_1",
   "animal_type",
   "is_default",
+  "routing",
   "op_sec",
   "operations",
   "expected_weight_yield",
@@ -54,6 +55,13 @@
    "label": "Default Route"
   },
   {
+   "fieldname": "routing",
+   "fieldtype": "Link",
+   "label": "ERPNext Routing",
+   "options": "Routing",
+   "read_only": 1
+  },
+  {
    "fieldname": "op_sec",
    "fieldtype": "Section Break",
    "label": "Operations"
@@ -81,7 +89,7 @@
  "issingle": 0,
  "is_submittable": 0,
  "links": [],
- "modified": "2026-08-16 22:00:00.000000",
+ "modified": "2026-08-16 23:50:00.000000",
  "modified_by": "Administrator",
  "module": "Leature Manufacturing",
  "name": "Leather Process Route",

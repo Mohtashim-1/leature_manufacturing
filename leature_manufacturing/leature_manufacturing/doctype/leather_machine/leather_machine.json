@@ -11,7 +11,8 @@
   "machine_type",
   "status",
   "asset",
-  "location"
+  "location",
+  "workstation"
  ],
  "fields": [
   {
@@ -57,6 +58,13 @@
    "fieldname": "location",
    "fieldtype": "Data",
    "label": "Location"
+  },
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "label": "ERPNext Workstation",
+   "options": "Workstation",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -65,7 +73,7 @@
  "issingle": 0,
  "is_submittable": 0,
  "links": [],
- "modified": "2026-08-16 22:00:00.000000",
+ "modified": "2026-08-16 23:50:00.000000",
  "modified_by": "Administrator",
  "module": "Leature Manufacturing",
  "name": "Leather Machine",

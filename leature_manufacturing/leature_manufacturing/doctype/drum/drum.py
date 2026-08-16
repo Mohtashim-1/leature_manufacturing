@@ -5,4 +5,10 @@ from frappe.model.document import Document
 
 
 class Drum(Document):
-	pass
+	def on_update(self):
+		from leature_manufacturing.leature_manufacturing.erpnext_bridge import sync_drum
+
+		try:
+			sync_drum(self)
+		except Exception:
+			pass

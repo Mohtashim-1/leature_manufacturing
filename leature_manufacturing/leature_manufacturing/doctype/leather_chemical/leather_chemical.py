@@ -5,4 +5,10 @@ from frappe.model.document import Document
 
 
 class LeatherChemical(Document):
-	pass
+	def on_update(self):
+		from leature_manufacturing.leature_manufacturing.erpnext_bridge import sync_chemical
+
+		try:
+			sync_chemical(self)
+		except Exception:
+			pass

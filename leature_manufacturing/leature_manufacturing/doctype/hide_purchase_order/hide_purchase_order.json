@@ -28,6 +28,7 @@
   "col_2",
   "landed_cost",
   "status",
+  "erpnext_purchase_order",
   "remarks",
   "amended_from"
  ],
@@ -164,6 +165,13 @@
    "default": "Draft"
   },
   {
+   "fieldname": "erpnext_purchase_order",
+   "fieldtype": "Link",
+   "label": "ERPNext Purchase Order",
+   "options": "Purchase Order",
+   "read_only": 1
+  },
+  {
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
@@ -181,7 +189,7 @@
  "issingle": 0,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-16 22:00:00.000000",
+ "modified": "2026-08-16 23:50:00.000000",
  "modified_by": "Administrator",
  "module": "Leature Manufacturing",
  "name": "Hide Purchase Order",

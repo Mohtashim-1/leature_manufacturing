@@ -11,7 +11,9 @@
   "default_finished_warehouse",
   "sqft_to_sqm",
   "hide_aging_alert_days",
-  "enable_piece_barcode"
+  "enable_piece_barcode",
+  "erp_sec",
+  "sync_with_erpnext"
  ],
  "fields": [
   {
@@ -55,6 +57,17 @@
    "fieldtype": "Check",
    "label": "Enable Piece Barcode",
    "default": 1
+  },
+  {
+   "fieldname": "erp_sec",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Integration"
+  },
+  {
+   "fieldname": "sync_with_erpnext",
+   "fieldtype": "Check",
+   "label": "Create Item / BOM / Work Order / Sales Order / Purchase Order",
+   "default": 1
   }
  ],
  "grid_page_length": 50,
@@ -63,7 +76,7 @@
  "issingle": 1,
  "is_submittable": 0,
  "links": [],
- "modified": "2026-08-16 22:00:00.000000",
+ "modified": "2026-08-16 23:50:00.000000",
  "modified_by": "Administrator",
  "module": "Leature Manufacturing",
  "name": "Leather Settings",

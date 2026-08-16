@@ -24,6 +24,12 @@ def after_migrate():
 	from leature_manufacturing.demo_data import seed_demo
 
 	seed_demo()
+	try:
+		from leature_manufacturing.leature_manufacturing.erpnext_bridge import sync_existing
+
+		sync_existing()
+	except Exception:
+		frappe.log_error(title="Leature ERPNext sync")
 
 
 def import_missing_doctypes():

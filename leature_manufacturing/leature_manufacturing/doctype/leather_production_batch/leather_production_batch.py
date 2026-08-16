@@ -17,3 +17,11 @@ class LeatherProductionBatch(Document):
 		y = calc_yield(self.input_weight_kg, self.output_weight_kg, self.output_area_sqft)
 		self.weight_yield_percent = y["weight_yield"]
 		self.area_yield = y["area_yield"]
+
+	def on_submit(self):
+		from leature_manufacturing.leature_manufacturing.erpnext_bridge import create_work_order
+
+		try:
+			create_work_order(self)
+		except Exception:
+			pass

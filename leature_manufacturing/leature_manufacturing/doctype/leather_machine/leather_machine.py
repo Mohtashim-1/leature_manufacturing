@@ -5,4 +5,10 @@ from frappe.model.document import Document
 
 
 class LeatherMachine(Document):
-	pass
+	def on_update(self):
+		from leature_manufacturing.leature_manufacturing.erpnext_bridge import sync_machine
+
+		try:
+			sync_machine(self)
+		except Exception:
+			pass
