@@ -128,9 +128,26 @@ def dashboard_data():
 
 	grade_rows = frappe.db.sql(
 		"""
-		SELECT grade, SUM(IFNULL(area_sqft, 0)) as area, SUM(IFNULL(pieces, 0)) as pieces
-		FROM `tabLeather Lot`
-		WHERE lot_stage = 'Finished' AND docstatus < 2
+		SELECT grade, SUM(IFNULL(area_sqft, 0)) as area, COUNT(*) as pieces
+		FROM `tabLeather Piece`
+		GROUP BY grade
+		""",
+		as_dict=True,
+	)
+	if not grade_rows:
+		grade_rows = frappe.db.sql(
+			"""
+			SELECT grade, SUM(IFNULL(area_sqft, 0)) as area, SUM(IFNULL(pieces, 0)) as pieces
+			FROM `tabLeather Lot`
+			WHERE docstatus < 2
+			GROUP BY grade
+			""",
+			as_dict=True,
+		)
+	hide_grades = frappe.db.sql(
+		"""
+		SELECT grade, SUM(IFNULL(pieces, 0)) as pieces, SUM(IFNULL(weight_kg, 0)) as weight_kg
+		FROM `tabHide Grade Summary`
 		GROUP BY grade
 		""",
 		as_dict=True,
@@ -251,6 +268,7 @@ def dashboard_data():
 			"rejected": flt(yr.rejected),
 		},
 		"grade_mix": grade_rows,
+		"hide_grades": hide_grades,
 		"process_output": process_rows,
 		"stages": stage_rows,
 		"chemicals": chem_rows,

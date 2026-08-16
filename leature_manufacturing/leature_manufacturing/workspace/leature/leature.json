@@ -563,14 +563,14 @@
   {
    "color": "Blue",
    "doc_view": "List",
-   "label": "Chart.js Dashboard",
+   "label": "Factory Dashboard",
    "link_to": "leather-dashboard",
    "type": "Page"
   },
   {
    "color": "Purple",
    "doc_view": "List",
-   "label": "ApexCharts Dashboard",
+   "label": "Executive Dashboard",
    "link_to": "leather-apex-dashboard",
    "type": "Page"
   },
