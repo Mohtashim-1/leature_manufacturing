@@ -21,9 +21,7 @@ add_to_apps_screen = [
 # Includes in <head>
 # ------------------
 
-# include js, css files in header of desk.html
-# app_include_css = "/assets/leature_manufacturing/css/leature_manufacturing.css"
-# app_include_js = "/assets/leature_manufacturing/js/leature_manufacturing.js"
+app_include_css = "/assets/leature_manufacturing/css/leature_dash.css"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/leature_manufacturing/css/leature_manufacturing.css"

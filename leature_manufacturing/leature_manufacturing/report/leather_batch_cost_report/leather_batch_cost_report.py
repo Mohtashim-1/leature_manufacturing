@@ -19,4 +19,14 @@ def execute(filters=None):
 		fields=["name", "lot", "costing_date", "finished_area_sqft", "total_standard", "total_actual", "cost_per_sqft"],
 		order_by="costing_date desc",
 	)
-	return columns, data
+	return columns, data, None, {
+		"data": {
+			"labels": [d.lot or d.name for d in data],
+			"datasets": [
+				{"name": _("Standard"), "values": [d.total_standard or 0 for d in data]},
+				{"name": _("Actual"), "values": [d.total_actual or 0 for d in data]},
+			],
+		},
+		"type": "bar",
+		"colors": ["#0f766e", "#ea580c"],
+	}

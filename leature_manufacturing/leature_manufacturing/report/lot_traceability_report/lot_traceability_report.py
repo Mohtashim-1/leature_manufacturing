@@ -37,4 +37,11 @@ def execute(filters=None):
 		{"label": _("Weight kg"), "fieldname": "weight_kg", "fieldtype": "Float", "width": 100},
 		{"label": _("Area sq. ft."), "fieldname": "area_sqft", "fieldtype": "Float", "width": 110},
 	]
-	return columns, data
+	return columns, data, None, {
+		"data": {
+			"labels": [d.lot_stage or d.name for d in data],
+			"datasets": [{"name": _("Weight kg"), "values": [d.weight_kg or 0 for d in data]}],
+		},
+		"type": "line",
+		"colors": ["#1d4ed8"],
+	}

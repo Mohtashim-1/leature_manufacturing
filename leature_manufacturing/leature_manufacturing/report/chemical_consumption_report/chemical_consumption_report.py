@@ -28,4 +28,14 @@ def execute(filters=None):
 		values,
 		as_dict=True,
 	)
-	return columns, data
+	return columns, data, None, {
+		"data": {
+			"labels": [d.chemical or d.parent for d in data[:15]],
+			"datasets": [
+				{"name": _("Standard"), "values": [d.standard_qty or 0 for d in data[:15]]},
+				{"name": _("Actual"), "values": [d.actual_qty or 0 for d in data[:15]]},
+			],
+		},
+		"type": "bar",
+		"colors": ["#64748b", "#dc2626"],
+	}

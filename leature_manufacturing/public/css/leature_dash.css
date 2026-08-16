@@ -1,0 +1,28 @@
+.leature-dash { padding: 8px 0 36px; }
+.ld-kpis {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 10px;
+	margin-bottom: 14px;
+}
+.ld-kpi {
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	padding: 12px 14px;
+	background: var(--card-bg);
+}
+.ld-kpi-label { font-size: 11px; color: var(--text-muted); }
+.ld-kpi-val { font-size: 22px; font-weight: 700; margin-top: 4px; }
+.ld-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 12px;
+}
+.ld-card {
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	padding: 12px;
+	background: var(--card-bg);
+}
+.ld-card h4 { margin: 0 0 8px; font-size: 13px; font-weight: 600; }
+.ld-canvas-wrap, .ld-apex { height: 280px; position: relative; }

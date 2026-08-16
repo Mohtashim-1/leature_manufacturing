@@ -148,22 +148,116 @@ def dashboard_data():
 	)
 	yield_row = frappe.db.sql(
 		"""
-		SELECT AVG(weight_yield_percent) as avg_yield, SUM(IFNULL(rejected_qty, 0)) as rejected
+		SELECT AVG(weight_yield_percent) as avg_yield, SUM(IFNULL(rejected_qty, 0)) as rejected,
+			SUM(IFNULL(input_weight_kg, 0)) as input_kg, SUM(IFNULL(output_weight_kg, 0)) as output_kg,
+			SUM(IFNULL(output_area_sqft, 0)) as output_area
 		FROM `tabLeather Production Batch`
 		WHERE docstatus = 1
 		""",
 		as_dict=True,
 	)
+	stage_rows = frappe.db.sql(
+		"""
+		SELECT lot_stage as stage, COUNT(*) as lots, SUM(IFNULL(weight_kg,0)) as weight_kg,
+			SUM(IFNULL(area_sqft,0)) as area_sqft
+		FROM `tabLeather Lot`
+		WHERE docstatus < 2
+		GROUP BY lot_stage
+		""",
+		as_dict=True,
+	)
+	chem_rows = frappe.db.sql(
+		"""
+		SELECT chemical, SUM(IFNULL(standard_qty,0)) as standard_qty,
+			SUM(IFNULL(actual_qty,0)) as actual_qty, SUM(IFNULL(amount,0)) as amount
+		FROM `tabLeather Batch Chemical`
+		WHERE parenttype = 'Leather Production Batch'
+		GROUP BY chemical
+		ORDER BY amount DESC
+		LIMIT 8
+		""",
+		as_dict=True,
+	)
+	cost_rows = frappe.db.sql(
+		"""
+		SELECT cost_head, SUM(IFNULL(standard_amount,0)) as standard_amount,
+			SUM(IFNULL(actual_amount,0)) as actual_amount
+		FROM `tabLeather Cost Line`
+		GROUP BY cost_head
+		""",
+		as_dict=True,
+	)
+	etp_rows = frappe.db.sql(
+		"""
+		SELECT log_date, wastewater_qty, ph, cod, bod, chromium, within_limits
+		FROM `tabETP Daily Log`
+		ORDER BY log_date ASC
+		LIMIT 14
+		""",
+		as_dict=True,
+	)
+	sales_rows = frappe.db.sql(
+		"""
+		SELECT customer, SUM(IFNULL(grand_total,0)) as amount, SUM(IFNULL(total_qty,0)) as qty
+		FROM `tabLeather Sales Order`
+		WHERE docstatus < 2
+		GROUP BY customer
+		""",
+		as_dict=True,
+	)
+	waste_rows = frappe.db.sql(
+		"""
+		SELECT category, SUM(IFNULL(qty,0)) as qty
+		FROM `tabWaste Record`
+		GROUP BY category
+		""",
+		as_dict=True,
+	)
+	yield_trend = frappe.db.sql(
+		"""
+		SELECT posting_date, process_stage, AVG(weight_yield_percent) as yield_pct,
+			SUM(IFNULL(output_weight_kg,0)) as output_kg
+		FROM `tabLeather Production Batch`
+		WHERE docstatus < 2
+		GROUP BY posting_date, process_stage
+		ORDER BY posting_date
+		""",
+		as_dict=True,
+	)
+	piece_rows = frappe.db.sql(
+		"""
+		SELECT status, COUNT(*) as pieces, SUM(IFNULL(area_sqft,0)) as area
+		FROM `tabLeather Piece`
+		GROUP BY status
+		""",
+		as_dict=True,
+	)
+	yr = yield_row[0] if yield_row else frappe._dict()
 	return {
 		"kpis": {
 			"raw_lots": count("Leather Lot", {"lot_stage": "Raw Hide"}),
 			"wet_blue_lots": count("Leather Lot", {"lot_stage": "Wet Blue"}),
 			"finished_lots": count("Leather Lot", {"lot_stage": "Finished"}),
-			"open_orders": count("Leather Sales Order", {"status": ["not in", ["Closed", "Cancelled"]], "docstatus": ["<", 2]}),
+			"open_orders": count(
+				"Leather Sales Order",
+				{"status": ["not in", ["Closed", "Cancelled"]], "docstatus": ["<", 2]},
+			),
 			"open_complaints": count("Leather Complaint", {"status": ["not in", ["Closed"]]}),
 			"available_pieces": count("Leather Piece", {"status": "Available"}),
-			"avg_yield": flt(yield_row[0].avg_yield) if yield_row else 0,
+			"avg_yield": flt(yr.avg_yield),
+			"input_kg": flt(yr.input_kg),
+			"output_kg": flt(yr.output_kg),
+			"output_area": flt(yr.output_area),
+			"rejected": flt(yr.rejected),
 		},
 		"grade_mix": grade_rows,
 		"process_output": process_rows,
+		"stages": stage_rows,
+		"chemicals": chem_rows,
+		"costs": cost_rows,
+		"etp": etp_rows,
+		"sales": sales_rows,
+		"waste": waste_rows,
+		"yield_trend": yield_trend,
+		"pieces": piece_rows,
 	}

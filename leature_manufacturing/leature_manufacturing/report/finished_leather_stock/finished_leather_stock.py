@@ -31,4 +31,15 @@ def execute(filters=None):
 		fields=["name", "lot", "article", "color", "grade", "area_sqft", "thickness_mm", "status", "warehouse"],
 		order_by="modified desc",
 	)
-	return columns, data
+	chart_map = {}
+	for row in data:
+		key = row.grade or "Ungraded"
+		chart_map[key] = chart_map.get(key, 0) + (row.area_sqft or 0)
+	return columns, data, None, {
+		"data": {
+			"labels": list(chart_map.keys()),
+			"datasets": [{"name": _("Area sq. ft."), "values": list(chart_map.values())}],
+		},
+		"type": "donut",
+		"colors": ["#1d4ed8", "#7c3aed", "#ea580c", "#16a34a", "#64748b"],
+	}

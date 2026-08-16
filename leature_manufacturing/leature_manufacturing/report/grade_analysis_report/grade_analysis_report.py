@@ -30,4 +30,11 @@ def execute(filters=None):
 		values,
 		as_dict=True,
 	)
-	return columns, data
+	return columns, data, None, {
+		"data": {
+			"labels": [f"{d.lot_stage or ''} / {d.grade or '-'}" for d in data],
+			"datasets": [{"name": _("Pieces"), "values": [d.pieces or 0 for d in data]}],
+		},
+		"type": "bar",
+		"colors": ["#7c3aed"],
+	}

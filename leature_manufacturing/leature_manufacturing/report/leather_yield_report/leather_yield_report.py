@@ -39,4 +39,13 @@ def execute(filters=None):
 		values,
 		as_dict=True,
 	)
-	return columns, data
+	return columns, data, None, {
+		"data": {
+			"labels": [d.process_stage or d.name for d in data[:12]][::-1],
+			"datasets": [
+				{"name": _("Yield %"), "values": [d.weight_yield_percent or 0 for d in data[:12]][::-1]},
+			],
+		},
+		"type": "bar",
+		"colors": ["#1d4ed8"],
+	}
